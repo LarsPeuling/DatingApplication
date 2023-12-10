@@ -8,8 +8,27 @@
     <Grid RowDefinitions="Auto,*,Auto"
           Padding="15,25">
 
+        <Frame 
+            Grid.Row="0"
+            x:Name="CardStack" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center" 
+            WidthRequest="200" 
+            HeightRequest="300" 
+            IsClippedToBounds="True" 
+            Padding="0">
+            <Grid
+                x:Name="CardGrid" 
+                ColumnDefinitions="*" 
+                RowDefinitions="*">
+                <Image Source="profile_picture.png"
+                   Aspect="AspectFill"
+                   />
+            </Grid>
+        </Frame>
+
         <VerticalStackLayout
-            Grid.Row="2"
+            Grid.Row="1"
             Spacing="10">
             <Label 
         Text="Swipes: 0" 
@@ -28,19 +47,50 @@
         VerticalOptions="CenterAndExpand" />
         </VerticalStackLayout>
 
-        <Frame 
-            x:Name="CardStack" 
-            HorizontalOptions="Center" 
-            VerticalOptions="Center" 
-            WidthRequest="200" 
-            HeightRequest="300" 
-            IsClippedToBounds="True" 
-            Padding="0">
-            <Grid 
-                x:Name="CardGrid" 
-                ColumnDefinitions="*" 
-                RowDefinitions="*" />
-        </Frame>
+        
+        
+        
+<!--This is to replace the NavBar,
+        Please copy to everey .xaml file in pages folder-->        
+        <HorizontalStackLayout Grid.Row="2"
+                               Grid.Column="2"
+                               Spacing="20"
+                               Padding="10">
+            <VerticalStackLayout HorizontalOptions="Center">
+                <ImageButton
+                    x:Name="HomeButton"
+                    Source="home.png"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Clicked="HomeButton_Clicked"
+                />
+                <Label Text="Home"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <ImageButton
+                    x:Name="ProfileButton"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Source="user.png"
+                    Clicked="ProfileButton_Clicked"
+                />
+                <Label Text="Profile"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <ImageButton
+                    x:Name="Testing"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Source="mess.png"
+                    Clicked="Testing_Clicked"
+                />
+                <Label Text="Testing"/>
+            </VerticalStackLayout>
+
+
+        </HorizontalStackLayout>
+
+        
 
     </Grid>
 </ContentPage>

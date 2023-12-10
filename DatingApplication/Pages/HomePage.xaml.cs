@@ -8,6 +8,21 @@ public partial class HomePage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void ProfileButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ProfilePage());
+    }
+    private void HomeButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new HomePage());
+    }
+
+    private void Testing_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new TestingPage());
+    }
+
     /*public async void AddProfileCard(ProfileCard card)
     {
         // Create a new profile card view
