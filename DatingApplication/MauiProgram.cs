@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using DatingApplication.Services;
-using DatingApplication.ViewModels;
 using DatingApplication.Pages;
+using DatingApplication.MVVM.ViewModels;
 
 namespace DatingApplication
 {
@@ -23,14 +23,14 @@ namespace DatingApplication
                 });
 
             // Continue initializing your .NET MAUI App here
-
+            builder.Services.AddSingleton<UserRepository>();
             return builder.Build();
         }
-        private static IServiceCollection AddProfileServices(IServiceCollection services)
+        /*private static IServiceCollection AddProfileServices(IServiceCollection services)
         {
             services.AddSingleton<ProfileService>();
             services.AddSingletonWithShellRoute<HomePage,HomeViewModel>(nameof(HomePage));
             return services;
-        }
+        }*/
     }
 }
