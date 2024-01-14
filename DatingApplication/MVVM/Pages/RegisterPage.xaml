@@ -38,4 +38,6 @@
                 HorizontalOptions="Center"
                 Background="#FF007F"/>
     </VerticalStackLayout>
+    
+    
 </ContentPage>
