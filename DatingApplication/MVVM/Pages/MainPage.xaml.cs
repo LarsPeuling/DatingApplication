@@ -1,4 +1,6 @@
-﻿namespace DatingApplication.Pages;
+﻿using DatingApplication.MVVM.Pages;
+
+namespace DatingApplication.Pages;
 
 public partial class MainPage : ContentPage
 {
@@ -27,4 +29,8 @@ public partial class MainPage : ContentPage
         }
     }
 
+    private void RegisterButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new RegisterPage());
+    }
 }
