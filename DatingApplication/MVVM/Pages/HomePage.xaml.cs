@@ -1,13 +1,18 @@
 using DatingApplication.MVVM.Models;
+//using DatingApplication.MVVM.Pages;
+using DatingApplication.MVVM.ViewModels;
 
 namespace DatingApplication.Pages;
 
 public partial class HomePage : ContentPage
 {
+    //public int LikeCountString { get; set; } = 0;
+    public Label LikeCountLabel { get; set; }
 	public HomePage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new HomePageViewModel();
+    }
 
     private void ProfileButton_Clicked(object sender, EventArgs e)
     {
@@ -21,6 +26,12 @@ public partial class HomePage : ContentPage
     private void Testing_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new TestingPage());
+    }
+
+    private void LikeButton_Clicked(object sender, EventArgs e)
+    {
+        LikeButton.Source = "heart.png";
+        LikeCountLabel = new Label { Text = LikeCount.ToString() };
     }
 
     /*public async void AddProfileCard(ProfileCard card)

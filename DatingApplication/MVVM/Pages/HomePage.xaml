@@ -31,15 +31,24 @@
             Grid.Row="1"
             Spacing="10">
             <Label 
-        Text="Swipes: 0" 
+                x:Name="SwipeCount"
+        Text="Swipes:" 
         FontSize="14" 
         HorizontalOptions="Center" 
         VerticalOptions="CenterAndExpand" />
-            <Label 
-        Text="Likes: 0" 
-        FontSize="14" 
+            <Label
+                x:Name="LikeCount"
+        Text="{Binding LikeCount, StringFormat='Likes: {0}'}"
         HorizontalOptions="Center" 
-        VerticalOptions="CenterAndExpand" />
+        VerticalOptions="CenterAndExpand"
+        FontSize="14" />
+            <ImageButton
+                x:Name="LikeButton"
+                Source="heart_empty.png"
+                HeightRequest="30"
+                WidthRequest="30"
+                Clicked="LikeButton_Clicked"
+                Command="{Binding LikeCommand}"/>
             <Label 
         Text="Dislikes: 0" 
         FontSize="14" 
