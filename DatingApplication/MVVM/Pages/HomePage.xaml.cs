@@ -8,7 +8,8 @@ public partial class HomePage : ContentPage
 {
     //public int LikeCountString { get; set; } = 0;
     public Label LikeCountLabel { get; set; }
-	public HomePage()
+    public Label DislikeCountLabel { get; set; }
+    public HomePage()
 	{
 		InitializeComponent();
         BindingContext = new HomePageViewModel();
@@ -32,6 +33,12 @@ public partial class HomePage : ContentPage
     {
         LikeButton.Source = "heart.png";
         LikeCountLabel = new Label { Text = LikeCount.ToString() };
+    }
+
+    private void DislikeButton_Clicked(object sender, EventArgs e)
+    {
+        DislikeButton.Source = "unlike.png";
+        DislikeCountLabel = new Label { Text = DislikeCount.ToString() };
     }
 
     /*public async void AddProfileCard(ProfileCard card)

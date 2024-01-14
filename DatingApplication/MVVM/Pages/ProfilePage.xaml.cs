@@ -6,4 +6,18 @@ public partial class ProfilePage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void ProfileButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ProfilePage());
+    }
+    private void HomeButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new HomePage());
+    }
+
+    private void Testing_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new TestingPage());
+    }
 }

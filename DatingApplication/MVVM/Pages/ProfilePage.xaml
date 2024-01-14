@@ -2,11 +2,60 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DatingApplication.Pages.ProfilePage"
-             Title="ProfilePage">
+             Title="ProfilePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#FF69b4">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--This is to replace the NavBar,
+Please copy to everey .xaml file in pages folder-->
+        <HorizontalStackLayout Grid.Row="2"
+                       Grid.Column="2"
+                       Spacing="20"
+                       Padding="10">
+            <VerticalStackLayout HorizontalOptions="Center">
+                <ImageButton
+            x:Name="HomeButton"
+            Source="home.png"
+            HeightRequest="30"
+            WidthRequest="30"
+            Clicked="HomeButton_Clicked"
+        />
+                <Label Text="Home"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <ImageButton
+            x:Name="ProfileButton"
+            HeightRequest="30"
+            WidthRequest="30"
+            Source="user.png"
+            Clicked="ProfileButton_Clicked"
+        />
+                <Label Text="Profile"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <ImageButton
+            x:Name="Testing"
+            HeightRequest="30"
+            WidthRequest="30"
+            Source="mess.png"
+            Clicked="Testing_Clicked"
+        />
+                <Label Text="Testing"/>
+            </VerticalStackLayout>
+
+
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

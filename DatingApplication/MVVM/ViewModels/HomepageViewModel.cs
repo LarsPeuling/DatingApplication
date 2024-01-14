@@ -15,6 +15,7 @@ namespace DatingApplication.MVVM.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         private int _likeCount;
+        private int _dislikeCount;
         public int LikeCount
         {
             get { return _likeCount; }
@@ -30,6 +31,20 @@ namespace DatingApplication.MVVM.ViewModels
             LikeCount++;
         });
 
+
+        public int DislikeCount
+        {
+            get { return _dislikeCount; }
+            set
+            {
+                _dislikeCount = value;
+                OnPropertyChanged(nameof(DislikeCount));
+            }
+        }
+        public ICommand DislikeCommand => new Command(() =>
+        {
+            DislikeCount++;
+        });
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
