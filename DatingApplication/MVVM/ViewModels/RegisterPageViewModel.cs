@@ -1,5 +1,4 @@
-﻿//using AuthenticationServices;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using DatingApplication.MVVM.Models;
 using PropertyChanged;
 using System.Windows.Input;
@@ -8,15 +7,12 @@ using Bogus;
 namespace DatingApplication.MVVM.ViewModels
 {
     [AddINotifyPropertyChangedInterface]
-    public partial class TestingPageViewModel
+    public partial class RegisterPageViewModel
     {
-        public List<User>? Users { get; set; }
         public User? CurrentUser { get; set; }
+        public List<User>? Users { get; set; }
         public ICommand? AddOrUpdateCommand { get; set; }
-        public ICommand? DeleteCommand { get; set; }
-
-
-        public TestingPageViewModel()
+        public RegisterPageViewModel()
         {
             Refresh();
             GenerateNewUser();
@@ -27,28 +23,20 @@ namespace DatingApplication.MVVM.ViewModels
                 GenerateNewUser();
                 Refresh();
             });
-
-            DeleteCommand = new Command(() =>
-            {
-                App.UserRepo.Delete(CurrentUser.Id);
-                Refresh();
-                GenerateNewUser();
-            });
         }
-
+        
         private void GenerateNewUser()
         {
             CurrentUser = new Faker<User>()
                 .RuleFor(x => x.Name, f => f.Person.FullName)
+                //.RuleFor(x => x.Password, f => f.Lorem.Word)
                 .RuleFor(x => x.Adress, f => f.Person.Address.Street)
                 .Generate();
         }
-
         private void Refresh()
         {
             Users = App.UserRepo.GetAll();
         }
-        
 
     }
 }

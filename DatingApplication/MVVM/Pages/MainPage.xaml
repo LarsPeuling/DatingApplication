@@ -52,6 +52,19 @@
                 TextColor="White"
                 HorizontalOptions="Center"
                 BackgroundColor="#FF007F"/>
+            <Label
+                Text="Not a member yet?"
+                HorizontalOptions="Center"
+                Margin="0,40,0,-35"/>
+            <Button
+                x:Name="RegisterButton"
+                Text="Register Here"
+                Clicked="RegisterButton_Clicked"
+                Margin="0,40,0,0"
+                TextColor="White"
+                HorizontalOptions="Center"
+                Background="#FF007F"/>
+
         </VerticalStackLayout>
 
     </Grid>
