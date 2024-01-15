@@ -97,6 +97,15 @@
                 />
                 <Label Text="Testing"/>
             </VerticalStackLayout>
+            <VerticalStackLayout>
+                <ImageButton
+                    x:Name="WorldMap"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Source="mess.png"
+                    Clicked="WorldMap_Clicked"/>
+                <Label Text="World Map"/>
+            </VerticalStackLayout>
 
 
         </HorizontalStackLayout>

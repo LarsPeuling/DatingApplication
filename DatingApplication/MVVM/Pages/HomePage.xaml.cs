@@ -1,4 +1,6 @@
 using DatingApplication.MVVM.Models;
+using DatingApplication.MVVM.Pages;
+
 //using DatingApplication.MVVM.Pages;
 using DatingApplication.MVVM.ViewModels;
 
@@ -39,6 +41,11 @@ public partial class HomePage : ContentPage
     {
         DislikeButton.Source = "unlike.png";
         DislikeCountLabel = new Label { Text = DislikeCount.ToString() };
+    }
+
+    private void WorldMap_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new WorldMapPage());
     }
 
     /*public async void AddProfileCard(ProfileCard card)
