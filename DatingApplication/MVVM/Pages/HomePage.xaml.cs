@@ -31,6 +31,11 @@ public partial class HomePage : ContentPage
         Navigation.PushAsync(new TestingPage());
     }
 
+    private void WorldMap_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new WorldMapPage());
+    }
+
     private void LikeButton_Clicked(object sender, EventArgs e)
     {
         LikeButton.Source = "heart.png";
@@ -43,10 +48,7 @@ public partial class HomePage : ContentPage
         DislikeCountLabel = new Label { Text = DislikeCount.ToString() };
     }
 
-    private void WorldMap_Clicked(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new WorldMapPage());
-    }
+    
 
     /*public async void AddProfileCard(ProfileCard card)
     {
